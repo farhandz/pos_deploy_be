@@ -1,0 +1,30 @@
+
+<a href="/admin/produk" class="btn btn-primary btn-circle"><i class="fas fa-arrow-left"></i></a>
+ <div class="container">
+      <form action="/admin/produk/<%=data[0].id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label>image</label>
+            <input name="image" type="file" class="form-control">
+        </div>
+        <div class="form-group">
+          <label>harga</label>
+        <input name="harga" value="<%=data[0].harga%>" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+      </div>
+       <div class="form-group">
+        <label>title</label>
+        <input name="title" value="<%=data[0].title%>" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+      </div>
+      <div class="form-group">
+           <label>nama kategory</label>
+        <select class="form-control" name="idcategory">
+          <option value="<%=data[0].id_category %>">--- nama kategori ---</oWption>
+            <% for(let i = 0; i< dataCategory.length; i++){ %>
+              <option value="<%= dataCategory[i].id %>"><%= dataCategory[i].nama_kategori %></option>
+              <%}%>
+            </select>
+      </div>
+        <div class="modal-footer">
+            <button type="submit"  class="btn btn-primary">Update</button>
+        </div>
+    </form>
+ </div>

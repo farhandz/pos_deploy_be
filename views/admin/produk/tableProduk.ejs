@@ -1,0 +1,34 @@
+<table class="table">
+<button type="button" class="btn btn-primary btn-circle" data-toggle="modal" data-target="#exampleModal">
+  <i class="fas fa-plus"></i>
+</button>
+  <thead>
+    <tr>
+      <th scope="col">no</th>
+      <th scope="col">image</th>
+      <th scope="col">harga</th>
+      <th scope="col">title</th>
+      <th scope="col">Nama Kategory</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% for(let i = 0; i < data.length; i++){ %>
+        <tr>
+            <td><%= i + 1 %></td>
+            <td>
+                <img src="http://localhost:3000/<%= data[i].image %>" alt="imageUrl" width="70px">
+            </td>
+            <td><%= data[i].harga %></td>
+            <td><%= data[i].title %></td>
+            <td><%= data[i].nama_kategori %></td>
+              <td>
+               <form action="/admin/produk/<%= data[i].id %>?_method=DELETE" method="POST">
+                <button type="submit" class="btn btn-danger btn-sm">hapus</button>
+                <a class="btn btn-warning btn-sm" href="/admin/produk/<%= data[i].id %>">update</a>
+              </form>
+            </td>
+        </tr>
+     <% } %>
+  </tbody>
+</table>

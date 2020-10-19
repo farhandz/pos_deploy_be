@@ -1,0 +1,21 @@
+
+<a href="/admin/history" class="btn btn-primary btn-circle"><i class="fas fa-arrow-left"></i></a>
+ <div class="container">
+      <form action="/admin/history/<%=data[0].id%>?_method=PUT" method="POST">
+        <div class="form-group">
+            <label>invoices</label>
+            <input name="invoices" value="<%=data[0].invoices%>" name="nama_category" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label>orders</label>
+            <input name="orders" value="<%=data[0].Orders%>" name="nama_category" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+            <label>amount</label>
+            <input name="amount" value="<%=data[0].amount%>" name="nama_category" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="modal-footer">
+            <button type="submit"  class="btn btn-primary">Update</button>
+        </div>
+    </form>
+ </div>

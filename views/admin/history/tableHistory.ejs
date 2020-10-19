@@ -1,0 +1,32 @@
+<table class="table">
+<button type="button" class="btn btn-primary btn-circle" data-toggle="modal" data-target="#exampleModal">
+  <i class="fas fa-plus"></i>
+</button>
+  <thead>
+    <tr>
+      <th scope="col">no</th>
+      <th scope="col">invoices</th>
+      <th scope="col">date</th>
+      <th scope="col">orders</th>
+      <th scope="col">amount</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  <tbody>
+      <% for(let i = 0; i < data.length; i++){ %>
+        <tr>
+            <td><%= i + 1 %></td>
+            <td><%= data[i].invoices %></td>
+            <td><%= data[i].Date %></td>
+            <td><%= data[i].Orders %></td>
+            <td><%= data[i].amount %></td>
+            <td>
+               <form action="/admin/history/<%= data[i].id %>?_method=DELETE" method="POST">
+                <button type="submit" class="btn btn-danger btn-sm">hapus</button>
+                <a class="btn btn-warning btn-sm" href="/admin/history/<%= data[i].id %>">update</a>
+              </form>
+            </td>
+        </tr>
+     <% } %>
+  </tbody>
+</table>

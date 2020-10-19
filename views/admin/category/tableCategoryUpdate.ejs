@@ -1,0 +1,13 @@
+
+<a href="/admin/category" class="btn btn-primary btn-circle"><i class="fas fa-arrow-left"></i></a>
+ <div class="container">
+      <form action="/admin/category/<%=data[0].id%>?_method=PUT" method="POST">
+        <div class="form-group">
+            <label>nama kategory</label>
+            <input value="<%=data[0].nama_kategori%>" name="nama_category" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="modal-footer">
+            <button type="submit"  class="btn btn-primary">Update</button>
+        </div>
+    </form>
+ </div>
